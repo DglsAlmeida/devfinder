@@ -28,8 +28,11 @@ jobs:
     - name: Setup yarn
       run: npm install -g yarn
       
+    - name: Install dependencies
+      run: yarn install
+      
     - name: Running lint
       run: yarn lint
     
     - name: Building project
-    - run: yarn build
+      run: yarn build
