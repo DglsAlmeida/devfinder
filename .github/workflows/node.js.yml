@@ -31,11 +31,5 @@ jobs:
     - name: Running lint
       run: yarn lint
     
-    - name: Running lint
-      run: yarn lint
-    
-    - name: Running lint
-      run: yarn lint
-    
     - name: Building project
     - run: yarn build
