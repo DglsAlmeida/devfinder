@@ -4,6 +4,8 @@
 name: React App CI/CD Test
 
 on:
+  push:
+    branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
 
