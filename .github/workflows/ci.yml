@@ -5,7 +5,7 @@ name: React App CI/CD Test
 
 on:
   pull_request:
-    branches: [ "main" ]
+    branches: [ main ]
 
 jobs:
   build:
