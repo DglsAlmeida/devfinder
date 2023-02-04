@@ -50,4 +50,4 @@ jobs:
       run: yarn build
       
     - name: Deploying
-    - run: echo "Deploying..."
+      run: echo "Deploying..."
