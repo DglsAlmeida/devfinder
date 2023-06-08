@@ -4,8 +4,8 @@ export interface UserGithubProfile {
   login: string;
   followers: number;
   following: number;
-  twitter_username: string;
-  location: string;
+  twitter_username: string | null;
+  location: string | null;
   html_url: string;
   reposQuantity: string;
   created_at: string;

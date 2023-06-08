@@ -6,7 +6,7 @@ export const ProfileCardLoading = () => {
   const { isMobile } = useResponsive()
 
   return (
-    <S.ProfileCardContainer>
+    <S.ProfileCardContainer data-testid="skeleton-loading">
     {!isMobile && <SkeletonLoading borderRadius='50%' width='80px' height='80px' mr="20px"/>}
    <S.ProfileInformations>
      <S.ProfileHeader>
