@@ -1,6 +1,6 @@
 import { RenderOptions, RenderResult, render } from "@testing-library/react";
 import { PropsWithChildren, ReactElement } from "react";
-import { ThemeProviderContext } from "../context/useTheme";
+import { Layout } from "../components/Layout";
 
 type RenderWithFunction = (
   ui: ReactElement,
@@ -9,9 +9,9 @@ type RenderWithFunction = (
 
 const wrapper = ({ children }: PropsWithChildren<unknown>) => {
   return (
-    <ThemeProviderContext>
+    <Layout>
       {children}
-    </ThemeProviderContext>
+    </Layout>
   )
 }
 

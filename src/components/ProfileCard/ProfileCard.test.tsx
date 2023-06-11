@@ -1,8 +1,8 @@
-import { render, screen } from '@testing-library/react'
+import { screen } from '@testing-library/react'
 import { ProfileCard } from '.'
-import { ThemeProviderContext } from '../../context/useTheme'
 import { user } from '../../mocks/userData'
 import { UserGithubProfile } from '../../types/home/types'
+import { customRender } from '../../utils/setupTests'
 
 describe('<ProfileCard />', () => {
   it('should render correctly', () => {
@@ -11,11 +11,7 @@ describe('<ProfileCard />', () => {
       reposQuantity: "0",
     }
 
-    render(
-      <ThemeProviderContext>
-        <ProfileCard {...props} />
-      </ThemeProviderContext>
-    )
+    customRender(<ProfileCard {...props} />)
 
     const name = screen.getByText(/Douglas Almeida/i)
 
