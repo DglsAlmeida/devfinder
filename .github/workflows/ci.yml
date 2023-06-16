@@ -11,16 +11,12 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [14.x, 16.x, 18.x]
-
     steps:
     - uses: actions/checkout@v3
     - name: Use Node.js 18
       uses: actions/setup-node@v3
       with:
-        node-version: ${{ matrix.node-version }}
+        node-version: 18.x
         cache: 'yarn'
         
     - name: Setup yarn
@@ -38,21 +34,23 @@ jobs:
     - name: Building project
       run: yarn build
 
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: build
+        path: .next
+
   deploy: 
     
     needs: tests
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [14.x, 16.x, 18.x]
 
     steps:
     - uses: actions/checkout@v3
     - name: Use Node.js 18
       uses: actions/setup-node@v3
       with:
-        node-version: ${{ matrix.node-version }}
+        node-version: 18.x
         cache: 'yarn'
         
     - name: Setup yarn
